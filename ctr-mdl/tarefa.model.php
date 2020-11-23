@@ -11,7 +11,7 @@
 		private $data_cadastro;
 
 		public function __get($atr){
-			return $this->atr;
+			return $this->$atr;
 		}
 
 		public function __set($atr, $value){
