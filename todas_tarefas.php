@@ -1,3 +1,10 @@
+<?php
+	
+	$acao = 'recuperar';
+	require 'ctr-mdl/tarefa.controller.php';
+
+?>
+
 <html>
 	<head>
 		<meta charset="utf-8" />

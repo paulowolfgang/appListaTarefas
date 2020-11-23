@@ -8,13 +8,21 @@
 	require "tarefa.service.php";
 	require "conexao.php";
 
-	$tarefa = new Tarefa();
-	$tarefa->__set('tarefa', $_POST['tarefa']);
+	$acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
-	$conexao = new Conexao();
+	if($acao == 'inserir'){
 
-	$tarefaService = new tarefaService($conexao, $tarefa);
+		$tarefa = new Tarefa();
+		$tarefa->__set('tarefa', $_POST['tarefa']);
 
-	$tarefaService->inserir();
-	
-	header('Location: ../nova_tarefa.php?inclusao=1');
+		$conexao = new Conexao();
+
+		$tarefaService = new tarefaService($conexao, $tarefa);
+
+		$tarefaService->inserir();
+		
+		header('Location: ../nova_tarefa.php?inclusao=1');
+
+	} else if($acao == 'recuperar'){
+		echo 'Ok...';
+	}
