@@ -30,4 +30,21 @@
 
 		$tarefaService = new tarefaService($conexao, $tarefa);
 		$tarefas = $tarefaService->recuperar();
+	} else if($acao == 'atualizar') {
+		//echo 'Ok (atualizar)...';
+		/*
+		echo '<pre>';
+			print_r($_POST);
+		echo '</pre>'; */
+		
+		$tarefa = new Tarefa();
+		$tarefa->__set('id', $_POST['id']);
+		$tarefa->__set('tarefa', $_POST['tarefa']);
+
+		$conexao = new Conexao();
+
+		$tarefaService = new TarefaService($conexao, $tarefa);
+		if($tarefaService->atualizar()){
+			header('location: ../todas_tarefas.php');
+		}
 	}

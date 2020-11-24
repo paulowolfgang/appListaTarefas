@@ -24,7 +24,7 @@
 				
 				// form de edição
 				let form = document.createElement('form');
-				form.action = '#';
+				form.action = 'ctr-mdl/tarefa.controller.php?acao=atualizar';
 				form.method = 'post';
 				form.className = 'row';
 
