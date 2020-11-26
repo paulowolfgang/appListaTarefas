@@ -16,5 +16,6 @@
 
 		public function __set($atr, $value){
 			$this->$atr = $value;
+			return $this;
 		}
 	}
